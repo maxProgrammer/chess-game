@@ -6,21 +6,21 @@ public class Board {
     private int columns;
     private Piece[][] pieces;
 
-    public Board(int rows, int colums) {
+    public Board(int rows, int columns) {
 
-        if (rows < 1 || colums < 1) {
+        if (rows < 1 || columns < 1) {
             throw new BoardException("Error creating board: there must be at least 1 row and 1 column");
         }
         this.rows = rows;
-        this.columns = colums;
-        pieces = new Piece[rows][colums];
+        this.columns = columns;
+        pieces = new Piece[rows][columns];
     }
 
     public int getRows() {
         return rows;
     }
 
-    public int getColums() {
+    public int getColumns() {
         return columns;
     }
 

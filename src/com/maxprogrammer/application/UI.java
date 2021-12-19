@@ -1,10 +1,9 @@
 package com.maxprogrammer.application;
 
-import com.maxprogrammer.chess.ChessException;
 import com.maxprogrammer.chess.ChessMatch;
 import com.maxprogrammer.chess.ChessPosition;
 import com.maxprogrammer.chess.Color;
-import com.maxprogrammer.chess.pieces.ChessPiece;
+import com.maxprogrammer.chess.ChessPiece;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;
@@ -59,6 +58,9 @@ public class UI {
         System.out.println();
         System.out.println("Turn : " + chessMatch.getTurn());
         System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+        if (chessMatch.getCheck()) {
+            System.out.println("CHECK!");
+        }
     }
 
     public static void printBoard(ChessPiece[][] pieces) {

@@ -1,11 +1,11 @@
-package com.maxprogrammer.chess.pieces;
+package com.maxprogrammer.chess;
 
 import com.maxprogrammer.boardgame.Board;
 import com.maxprogrammer.boardgame.Piece;
 import com.maxprogrammer.boardgame.Position;
-import com.maxprogrammer.chess.Color;
 
 public abstract class ChessPiece extends Piece {
+
     private Color color;
 
     public ChessPiece(Board board, Color color) {
@@ -17,9 +17,12 @@ public abstract class ChessPiece extends Piece {
         return color;
     }
 
-    protected boolean isThereOpponentPiece(Position position){
-        ChessPiece p  = (ChessPiece) getBoard().piece(position);
-        return  p != null && p.getColor() != color;
+    public ChessPosition getChessPosition() {
+        return ChessPosition.fromPosition(position);
     }
 
+    protected boolean isThereOpponentPiece(Position position) {
+        ChessPiece p = (ChessPiece) getBoard().piece(position);
+        return p != null && p.getColor() != color;
+    }
 }

@@ -2,6 +2,7 @@ package com.maxprogrammer.chess.pieces;
 
 import com.maxprogrammer.boardgame.Board;
 import com.maxprogrammer.boardgame.Position;
+import com.maxprogrammer.chess.ChessPiece;
 import com.maxprogrammer.chess.Color;
 
 public class King extends ChessPiece {

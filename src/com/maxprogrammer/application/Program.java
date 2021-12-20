@@ -3,7 +3,7 @@ package com.maxprogrammer.application;
 import com.maxprogrammer.chess.ChessException;
 import com.maxprogrammer.chess.ChessMatch;
 import com.maxprogrammer.chess.ChessPosition;
-import com.maxprogrammer.chess.pieces.ChessPiece;
+import com.maxprogrammer.chess.ChessPiece;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -18,7 +18,7 @@ public class Program {
         ChessMatch chessMatch = new ChessMatch();
         List<ChessPiece> captured = new ArrayList<>();
 
-        while (true) {
+        while (!chessMatch.getCheckMate()) {
             try {
                 UI.clearScreen();
                 UI.printMatch(chessMatch, captured);
@@ -48,5 +48,7 @@ public class Program {
                 sc.nextLine();
             }
         }
+        UI.clearScreen();
+        UI.printMatch(chessMatch, captured);
     }
 }
